@@ -1,0 +1,925 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Ashoka Womens Engineering College | Event Registration</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #f7f8ff;
+            color: #181b30;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            width: 100%;
+            height: 80px;
+
+            background: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .college-logo {
+            width: 52px;
+            height: 52px;
+
+            border-radius: 50%;
+
+            overflow: hidden;
+
+            background: linear-gradient(
+                135deg,
+                #4f46e5,
+                #7c3aed
+            );
+        }
+
+        .college-logo img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .college-name h2 {
+            font-size: 18px;
+            font-weight: 800;
+            color: #20243a;
+        }
+
+        .college-name span {
+            font-size: 12px;
+            color: #777;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #5b4be7;
+        }
+
+        .nav-button {
+            text-decoration: none;
+
+            background: #5b4be7;
+            color: white;
+
+            padding: 12px 22px;
+
+            border-radius: 25px;
+
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .menu-button {
+            display: none;
+
+            border: none;
+            background: none;
+
+            font-size: 28px;
+
+            cursor: pointer;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+
+            min-height: 580px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 80px 8%;
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    rgba(20, 20, 60, 0.72),
+                    rgba(20, 20, 60, 0.72)
+                ),
+                url("askw1.jpeg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            color: white;
+        }
+
+        .hero-content span {
+            color: #c4b5fd;
+
+            font-size: 15px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+        .hero-content h1 {
+            font-size: 52px;
+            line-height: 1.2;
+
+            margin: 15px 0;
+        }
+
+        .hero-content h1 strong {
+            color: #a78bfa;
+        }
+
+        .hero-content p {
+            font-size: 17px;
+            line-height: 1.8;
+
+            color: #e5e7eb;
+
+            max-width: 620px;
+
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+
+            padding: 14px 26px;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .primary-btn {
+            background: #7c3aed;
+            color: white;
+        }
+
+        .secondary-btn {
+            border: 1px solid white;
+            color: white;
+        }
+
+
+        /* ================= STATS ================= */
+
+        .stats {
+
+            margin-top: -50px;
+
+            position: relative;
+
+            z-index: 5;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+
+            padding: 0 8%;
+        }
+
+        .stat-card {
+
+            background: white;
+
+            padding: 30px;
+
+            text-align: center;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 15px 40px
+                rgba(0,0,0,0.10);
+        }
+
+        .stat-card h2 {
+
+            font-size: 35px;
+
+            color: #5b4be7;
+
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+
+            color: #777;
+
+            font-size: 14px;
+        }
+
+
+        /* ================= ABOUT ================= */
+
+        .about {
+
+            padding: 100px 8%;
+
+            text-align: center;
+        }
+
+        .about span {
+
+            color: #5b4be7;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+        .about h2 {
+
+            font-size: 35px;
+
+            margin: 10px 0 20px;
+        }
+
+        .about p {
+
+            max-width: 750px;
+
+            margin: auto;
+
+            color: #777;
+
+            line-height: 1.8;
+        }
+
+
+        /* ================= CTA ================= */
+
+        .cta {
+
+            margin: 0 8% 80px;
+
+            padding: 60px 40px;
+
+            border-radius: 25px;
+
+            text-align: center;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #5b4be7,
+                    #7c3aed
+                );
+        }
+
+        .cta h2 {
+
+            font-size: 32px;
+
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+
+            color: #eee;
+
+            margin-bottom: 25px;
+        }
+
+        .cta a {
+
+            display: inline-block;
+
+            background: white;
+
+            color: #5b4be7;
+
+            padding: 13px 28px;
+
+            border-radius: 25px;
+
+            text-decoration: none;
+
+            font-weight: 600;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            background: #111426;
+
+            color: white;
+
+            padding: 50px 8% 20px;
+        }
+
+        .footer-content {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 50px;
+        }
+
+        .footer-brand {
+
+            max-width: 350px;
+        }
+
+        .footer-brand p {
+
+            color: #aaa;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            margin-top: 10px;
+        }
+
+        .footer-links {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 10px;
+        }
+
+        .footer-links a {
+
+            color: #aaa;
+
+            text-decoration: none;
+
+            font-size: 14px;
+        }
+
+        .footer-contact p {
+
+            color: #aaa;
+
+            font-size: 14px;
+
+            margin: 10px 0;
+        }
+
+        .copyright {
+
+            border-top: 1px solid #2d3040;
+
+            margin-top: 35px;
+
+            padding-top: 20px;
+
+            text-align: center;
+
+            color: #888;
+
+            font-size: 13px;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width: 900px) {
+
+            nav {
+
+                display: none;
+
+                position: absolute;
+
+                top: 80px;
+                left: 0;
+
+                width: 100%;
+
+                background: white;
+
+                padding: 25px;
+
+                flex-direction: column;
+            }
+
+            nav.show {
+                display: flex;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .nav-button {
+                display: none;
+            }
+
+            .stats {
+
+                grid-template-columns: 1fr;
+
+                margin-top: 30px;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+
+
+        @media(max-width: 600px) {
+
+            .navbar {
+                padding: 0 5%;
+            }
+
+            .college-name h2 {
+                font-size: 13px;
+            }
+
+            .college-name span {
+                font-size: 10px;
+            }
+
+            .hero {
+                padding: 60px 5%;
+            }
+
+            .hero-content h1 {
+                font-size: 34px;
+            }
+
+            .hero-content p {
+                font-size: 14px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .about {
+                padding: 70px 5%;
+            }
+
+            .cta {
+                margin: 0 5% 60px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo-area">
+
+        <div class="college-logo">
+
+            <img src="askw logo.jpeg"
+                 alt="Ashoka College Logo">
+
+        </div>
+
+        <div class="college-name">
+
+            <h2>ASHOKA WOMENS ENGINEERING COLLEGE</h2>
+
+            <span>Event Registration Portal</span>
+
+        </div>
+
+    </div>
+
+
+    <nav id="navMenu">
+
+        <a href="index.html" class="active">
+            Home
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="events.html">
+            Events
+        </a>
+
+        <a href="register.html">
+            Register
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+    </nav>
+
+
+    <a href="register.html"
+       class="nav-button">
+
+        Register Now
+
+    </a>
+
+
+    <button class="menu-button"
+            onclick="toggleMenu()">
+
+        ☰
+
+    </button>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span>ASHOKA WOMENS ENGINEERING COLLEGE</span>
+
+        <h1>
+            Experience.
+            <strong>Participate.</strong>
+            Celebrate.
+        </h1>
+
+        <p>
+            Register for exciting technical,
+            cultural and sports events at
+            Ashoka Womens Engineering College.
+            Be part of an unforgettable campus
+            experience.
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a href="register.html"
+               class="primary-btn">
+
+                Register for Event →
+
+            </a>
+
+            <a href="events.html"
+               class="secondary-btn">
+
+                View Events
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+
+    <!-- TOTAL DATABASE ROWS -->
+
+    <div class="stat-card">
+
+        <h2 id="totalRegistrations">
+            0
+        </h2>
+
+        <p>
+            Students Registered
+        </p>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <h2>
+            7+
+        </h2>
+
+        <p>
+            College Events
+        </p>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <h2>
+            100%
+        </h2>
+
+        <p>
+            Campus Experience
+        </p>
+
+    </div>
+
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about"
+         id="about">
+
+    <span>
+        ABOUT THE PORTAL
+    </span>
+
+    <h2>
+        Connect. Participate. Celebrate.
+    </h2>
+
+    <p>
+        The Ashoka Womens Engineering College
+        Event Registration Portal provides students
+        with a simple and convenient way to register
+        for college events. Students can participate
+        in technical competitions, workshops,
+        cultural programs and sports activities.
+    </p>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <h2>
+        Ready to Join an Event?
+    </h2>
+
+    <p>
+        Register now and become part of
+        the Ashoka College event community.
+    </p>
+
+    <a href="register.html">
+        Register Now →
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact">
+
+    <div class="footer-content">
+
+
+        <div class="footer-brand">
+
+            <h2>
+                🎓 ASHOKA WOMENS ENGINEERING COLLEGE
+            </h2>
+
+            <p>
+                Online College Event Registration System.
+                Connecting students through exciting
+                college experiences.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="events.html">
+                Events
+            </a>
+
+            <a href="register.html">
+                Register
+            </a>
+
+        </div>
+
+
+        <div class="footer-contact">
+
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                📧 events@ashokacollege.in
+            </p>
+
+            <p>
+                📞 +91 8328040678
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        ©
+        <span id="currentYear"></span>
+        Ashoka College.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+
+    /* MOBILE MENU */
+
+    function toggleMenu() {
+
+        const menu =
+            document.getElementById("navMenu");
+
+        menu.classList.toggle("show");
+
+    }
+
+
+    /* CURRENT YEAR */
+
+    document.getElementById("currentYear")
+        .textContent =
+        new Date().getFullYear();
+
+
+    /* ==============================
+       GET TOTAL DATABASE ROWS
+       ============================== */
+
+    function loadTotalRegistrations() {
+
+        fetch("CountServlet")
+
+            .then(response => {
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Server error"
+                    );
+
+                }
+
+                return response.text();
+
+            })
+
+            .then(total => {
+
+                document.getElementById(
+                    "totalRegistrations"
+                ).textContent = total;
+
+            })
+
+            .catch(error => {
+
+                console.error(
+                    "Error:",
+                    error
+                );
+
+                document.getElementById(
+                    "totalRegistrations"
+                ).textContent = "0";
+
+            });
+
+    }
+
+
+    /* LOAD COUNT WHEN PAGE OPENS */
+
+    loadTotalRegistrations();
+
+
+</script>
+
+
+</body>
+
+</html>

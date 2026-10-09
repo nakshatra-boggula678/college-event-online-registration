@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ashoka womens Engineering College | Event Registration</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+  background-image: url("askw1.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+        /* NAVBAR */
+
+        .navbar {
+            width: 100%;
+            height: 80px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .college-logo {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .college-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .college-name h2 {
+            font-size: 20px;
+            font-weight: 800;
+            color: #20243a;
+        }
+
+        .college-name span {
+            font-size: 20px;
+            color: #777;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #5b4be7;
+        }
+
+        .nav-button {
+            text-decoration: none;
+            background: #5b4be7;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .menu-button {
+            display: none;
+            border: none;
+            background: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* HEADER */
+
+        .page-header {
+            padding: 70px 8% 50px;
+            text-align: center;
+            background:
+                radial-gradient(circle at top right,
+                rgba(99,102,241,0.18),
+                transparent 35%),
+                linear-gradient(135deg,#f7f8ff,#ffffff);
+        }
+
+        .page-header span {
+            color: #5b4be7;
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .page-header h1 {
+            font-size: 42px;
+            margin: 10px 0;
+            color: #181b30;
+        }
+
+        .page-header p {
+            color: #777;
+            max-width: 650px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+        /* REGISTRATION */
+
+        .registration-section {
+            padding: 70px 8%;
+        }
+
+        .registration-container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 45px;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .form-title h2 {
+            font-size: 28px;
+            color: #181b30;
+        }
+
+        .form-title p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 13px 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-family: "Poppins", sans-serif;
+            font-size: 14px;
+            outline: none;
+            background: #fafaff;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #5b4be7;
+            background: white;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .gender-options {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            height: 48px;
+        }
+
+        .gender-options label {
+            font-weight: 400;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .gender-options input {
+            width: auto;
+        }
+
+        .submit-btn {
+            width: 100%;
+            border: none;
+            background: linear-gradient(135deg, #5b4be7, #7c3aed);
+            color: white;
+            padding: 15px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #111426;
+            color: white;
+            padding: 50px 8% 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .footer-brand {
+            max-width: 350px;
+        }
+
+        .footer-brand p {
+            color: #aaa;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-contact p {
+            color: #aaa;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        .copyright {
+            border-top: 1px solid #2d3040;
+            margin-top: 35px;
+            padding-top: 20px;
+            text-align: center;
+            color: #888;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media(max-width: 900px) {
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 25px;
+                flex-direction: column;
+            }
+
+            nav.show {
+                display: flex;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .nav-button {
+                display: none;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+
+        @media(max-width: 600px) {
+
+            .navbar {
+                padding: 0 5%;
+            }
+
+            .college-name h2 {
+                font-size: 15px;
+            }
+
+            .page-header h1 {
+                font-size: 32px;
+            }
+
+            .registration-section {
+                padding: 50px 5%;
+            }
+
+            .registration-container {
+                padding: 25px 20px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+    <div class="logo-area">
+
+        <div class="college-logo">
+
+            <img src="askw logo.jpeg"
+                 alt="Ashoka College Logo">
+                  </div>
+
+        <div class="college-name">
+
+            <h2>ASHOKA WOMENS ENGINEERING COLLEGE</h2>
+
+            <span>Event Registration Portal</span>
+
+        </div>
+
+    </div>
+
+
+    <nav id="navMenu">
+
+        <a href="index.html">Home</a>
+
+        <a href="index.html#about">About</a>
+
+        <a href="events.html">Events</a>
+
+        <a href="register.html" class="active">Register</a>
+
+        
+
+        <a href="index.html#contact">Contact</a>
+
+    </nav>
+
+
+    <a href="register.html" class="nav-button">
+        Register Now
+    </a>
+
+
+    <button class="menu-button" onclick="toggleMenu()">
+        ☰
+    </button>
+
+</header>
+
+
+<!-- PAGE HEADER -->
+
+<section class="page-header">
+
+    <span>ASHOKA COLLEGE EVENTS</span>
+
+    <h1>Event Registration</h1>
+
+    <p>
+        Register for your favourite college events
+        and become part of an exciting campus experience.
+    </p>
+
+</section>
+
+
+<!-- REGISTRATION FORM -->
+
+<section class="registration-section">
+
+    <div class="registration-container">
+
+        <div class="form-title">
+
+            <h2>Student Registration</h2>
+
+            <p>
+                Enter your details carefully to complete registration.
+            </p>
+
+        </div>
+
+
+        <!-- IMPORTANT -->
+        <!-- RegisterServlet is your Java servlet -->
+
+        <form id="registrationForm"
+              action="RegisterServlet"
+              method="post">
+
+
+            <!-- NAME + EMAIL -->
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name *
+                    </label>
+
+                    <input type="text"
+                           id="name"
+                           name="name"
+                           placeholder="Enter your full name"
+                           required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address *
+                    </label>
+
+                    <input type="email"
+       
+           id="email"
+       name="email"
+       placeholder="Enter your college email"
+       pattern="[a-zA-Z0-9._%+-]+@ashokacollege\.in"
+       title="please enter valid email address ending with @ashokacollege.in"
+       required>
+                </div>
+
+            </div>
+
+            <!-- PHONE + ROLL -->
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number *
+                    </label>
+
+                    <input type="tel"
+                           id="phone"
+                           name="phone"
+                           placeholder="Enter phone number"
+                           pattern="[0-9]{10}"
+                           maxlength="10"
+                           required>
+
+                </div>
+
+
+               <div class="form-group">
+                    <label for="roll">
+                        Roll Number *
+                    </label>
+
+                    <input type="text"
+                           id="roll"
+                           name="roll"
+           
+                                      placeholder="Enter roll number "
+           pattern="[0-9]{3}[A-Za-z]{2}[0-9]{5}"
+           maxlength="10"
+           minlength="10"
+           title="Roll number must be in the format 252TA05039 (3 digits, 2 alphabets, 5 digits)"
+                           
+                           required>
+                </div>
+
+            </div>
+
+
+            <!-- DEPARTMENT + YEAR -->
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="department">
+                        Department *
+                    </label>
+
+                    <select id="department"
+                            name="department"
+                            required>
+
+                        <option value="">
+                            Select Department
+                        </option>
+
+                        <option value="CSE">
+                            Computer Science & Engineering
+                        </option>
+
+                        <option value="ECE">
+                            Electronics & Communication Engineering
+                        </option>
+
+                        <option value="EEE">
+                            Electrical & Electronics Engineering
+                        </option>
+
+                        <option value="CIVIL">
+                            Civil Engineering
+                        </option>
+
+                        <option value="MECH">
+                            Mechanical Engineering
+                        </option>
+
+                        <option value="AI&DS">
+                            Artificial Intelligence & Data Science
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="year">
+                        Year *
+                    </label>
+
+                    <select id="year"
+                            name="year"
+                            required>
+
+                        <option value="">
+                            Select Year
+                        </option>
+
+                        <option value="1st Year">
+                            1st Year
+                        </option>
+
+                        <option value="2nd Year">
+                            2nd Year
+                        </option>
+
+                        <option value="3rd Year">
+                            3rd Year
+                        </option>
+
+                        <option value="4th Year">
+                            4th Year
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- GENDER -->
+
+            <div class="form-group full">
+
+                <label>Gender *</label>
+
+                <div class="gender-options">
+
+                    <label>
+                        <input type="radio"
+                               name="gender"
+                               value="Male"
+                               required>
+                        Male
+                    </label>
+
+
+                    <label>
+                        <input type="radio"
+                               name="gender"
+                               value="Female">
+                        Female
+                    </label>
+
+
+                    <label>
+                        <input type="radio"
+                               name="gender"
+                               value="Other">
+                        Other
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- EVENT -->
+
+            <div class="form-group full">
+
+                <label for="event">
+                    Select Event *
+                </label>
+
+                <select id="event"
+                        name="event"
+                        required>
+
+                    <option value="">
+                        Select an Event
+                    </option>
+
+                    <option value="Coding Competition">
+                        Coding Competition
+                    </option>
+
+                    <option value="Hackathon">
+                        Hackathon
+                    </option>
+
+                    <option value="Technical Workshop">
+                        Technical Workshop
+                    </option>
+
+                    <option value="Cultural Fest">
+                        Cultural Fest
+                    </option>
+
+                    <option value="Dance Competition">
+                        Dance Competition
+                    </option>
+
+                    <option value="Singing Competition">
+                        Singing Competition
+                    </option>
+
+                    <option value="Sports Meet">
+                        Sports Meet
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ADDITIONAL INFORMATION -->
+
+            <div class="form-group full">
+
+                <label for="messageText">
+                    Additional Information
+                </label>
+
+                <textarea id="messageText"
+                          name="message"
+                          placeholder="Enter any additional information..."></textarea>
+
+            </div>
+
+
+            <!-- ONLY ONE BUTTON -->
+
+            <button type="submit"
+                    class="submit-btn"
+                    id="submitBtn">
+
+                Register for Event →
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div class="footer-brand">
+
+            <h2>🎓 ASHOKA WOMENS ENGINEERING COLLEGE</h2>
+
+            <p>
+                Online College Event Registration System.
+                Connecting students through exciting
+                college experiences.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+
+            <a href="events.html">About</a>
+
+            <a href="events.html">Events</a>
+
+            <a href="register.html">Register</a>
+
+            
+        </div>
+
+
+        <div class="footer-contact">
+
+            <h3>Contact</h3>
+
+            <p>📧 events@ashokacollege.in</p>
+
+            <p>📞 +91 8328040678</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © <span id="currentYear"></span>
+        Ashoka College. All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+    function toggleMenu() {
+
+        const menu =
+            document.getElementById("navMenu");
+
+        menu.classList.toggle("show");
+
+    }
+
+
+    document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+
+    const form =
+        document.getElementById("registrationForm");
+
+    const submitBtn =
+        document.getElementById("submitBtn");
+
+
+    form.addEventListener("submit", function () {
+
+        submitBtn.disabled = true;
+
+        submitBtn.textContent = "Registering...";
+
+    });
+
+</script>
+
+
+</body>
+</html>
